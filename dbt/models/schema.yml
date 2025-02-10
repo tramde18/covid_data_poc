@@ -1,0 +1,15 @@
+sources:
+  - name: raw
+    database: raw
+    tables:
+      - name: covid_data
+  - name: core
+    database: core
+    tables:
+      - name: covid_data
+  - name: core_extensions
+    database: core_extensions
+    tables:
+      - name: dim_country
+      - name: dim_province_state
+      - name: fact_covid_daily
