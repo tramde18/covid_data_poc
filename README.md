@@ -42,7 +42,7 @@ To set up MySQL and Mage.AI automatically, run the **setup.sh** script:
 #### MySQL UI Access (Optional)
 You can access **MySQL** through a UI tool like DBeaver or any other IDE of your choice.
 
-![MySQL VSCode Extension](image.png)
+![MySQL VSCode Extension](docs/images/image.png)
 
 - If you're using **VSCode**, we recommend installing **MySQL extension** from the VSCode Extensions Marketplace. It will help you manage your database easily within the IDE.
 
@@ -87,7 +87,7 @@ To load data (Covid Datasets from Github API), run the **data loader** using the
 You can access MageAI Web UI via **localhost:6789** for an interactive experience
 
 **MageAI Web Server**
-![MageAI Web Server](image-1.png)
+![MageAI Web Server](docs/images/image-1.png)
 
 ---
 
@@ -96,10 +96,10 @@ While this guide doesn't go into the details of creating pipelines in Mage.AI, t
 
 Here are some screenshots to give you an idea of what the Mage.AI pipeline UI looks like:
 **MageAI Pipeline**
-![MageAI Pipeline](image-2.png)
+![MageAI Pipeline](docs/images/image-2.png)
 
 **MageAI Pipeline Edit**
-![MageAI Pipeline Edit](image-3.png)
+![MageAI Pipeline Edit](docs/images/image-3.png)
 
 ---
 
