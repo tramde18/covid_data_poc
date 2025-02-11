@@ -33,9 +33,9 @@ Follow these steps to set up your Python virtual environment and ensure you’re
 #### MySQL & Mage.AI Setup with Docker-Compose
 To set up MySQL and Mage.AI automatically, run the **setup.sh** script:
 
-    ```bash
-       ./setup.sh 
-    ```
+```bash
+    ./setup.sh
+```
 
 ---
 
