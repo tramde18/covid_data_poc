@@ -12,7 +12,7 @@ WITH daily_metrics AS (
         Deaths,
         LAG(Confirmed, 1) OVER (PARTITION BY Province_State, Country_Region ORDER BY Date) AS Prev_Confirmed,
         LAG(Deaths, 1) OVER (PARTITION BY Province_State, Country_Region ORDER BY Date) AS Prev_Deaths
-    FROM {{ source('core_extensions', 'fact_covid_daily') }}
+    FROM {{ ref('fact_covid_daily') }}
     WHERE
         Date IS NOT NULL
 )

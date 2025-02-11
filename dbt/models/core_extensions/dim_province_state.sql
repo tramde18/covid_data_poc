@@ -19,6 +19,6 @@ SELECT
     dp.LONG_,
     dc.ID AS COUNTRY_ID
 FROM DISTINCT_PROVINCE dp
-LEFT JOIN {{ source('core_extensions', 'dim_country') }} dc
+LEFT JOIN {{ ref('dim_country') }} dc
     ON dp.COUNTRY_REGION = dc.COUNTRY_REGION and dp.ISO3 = dc.ISO3
 

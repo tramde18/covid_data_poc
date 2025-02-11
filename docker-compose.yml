@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: admin123
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - mysql-network
+    restart: always
+
+  magic:
+    image: mageai/mageai:latest
+    container_name: magic-container
+    command: mage start mage_ai_poc
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      USER_CODE_PATH: /home/src/mage_ai_poc
+      ENV: DEV
+    ports:
+      - 6789:6789
+    volumes:
+      - .:/home/src/
+      - ./extractor/utils:/home/src/mage_ai_poc/utils
+      - ./extractor/data_loaders:/home/src/mage_ai_poc/data_loaders
+      - ./extractor/transformers:/home/src/mage_ai_poc/transformers
+      - ./scripts:/home/src/mage_ai_poc/scripts
+      - ./dbt:/home/src/mage_ai_poc/dbt
+    networks:
+      - mysql-network
+    restart: on-failure:5
+
+networks:
+  mysql-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
+    driver: local

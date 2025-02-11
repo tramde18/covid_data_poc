@@ -1,0 +1,14 @@
+
+# GitHub API settings
+github_api:
+  url: "https://api.github.com/repos/CSSEGISandData/COVID-19/contents/csse_covid_19_data/csse_covid_19_daily_reports_us"
+
+# Database settings (password is encrypted)
+database:
+  user: "root"
+  password: "admin123"
+  host: "host.docker.internal"
+  default_db: "raw"
+
+# Table names
+staging_table: "covid_data"

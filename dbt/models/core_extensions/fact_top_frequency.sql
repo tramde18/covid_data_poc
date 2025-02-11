@@ -6,14 +6,14 @@ WITH FrequencyData AS (
     SELECT
         Province_State,
         COUNT(*) AS frequency
-    FROM {{ source('core_extensions', 'fact_covid_daily') }}
+    FROM {{ ref('fact_covid_daily') }}
     GROUP BY
         Province_State
 ),
 TotalCount AS (
     SELECT
         COUNT(*) AS total_count
-    FROM {{ source('core_extensions', 'fact_covid_daily') }}
+    FROM {{ ref('fact_covid_daily') }}
 )
 
 SELECT

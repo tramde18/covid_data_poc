@@ -1,0 +1,19 @@
+default:
+  target: all
+  outputs:
+    core:
+      type: mysql
+      host: host.docker.internal
+      user: root
+      password: admin123
+      database: core
+      schema: core
+      port: 3306
+    core_extensions:
+      type: mysql
+      host: host.docker.internal
+      user: root
+      password: admin123
+      database: core_extensions
+      schema: core_extensions
+      port: 3306
