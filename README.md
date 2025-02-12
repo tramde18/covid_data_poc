@@ -1,9 +1,17 @@
+### Project Overview
+This repository demonstrates the integration of several tools to orchestrate data movement and transformation, including DBT, an API loader built with Python, and MageAI.
+
+The primary objective of this project is to automate the process of pulling COVID-19 datasets from a GitHub API, ingesting the data into a MySQL database, and performing data transformations using DBT for reporting purposes. The project leverages the Medallion Architecture approach to structure the data pipeline, ensuring data quality and consistency at each stage.
+
+---
+
 ### Project Setup Guide
 
 #### Prerequisites
 Ensure you have the following installed on your Windows machine:
 1. Basic Understanding of the ff.
     - **Medallion Architecture**
+    ![Medallion Architecture Flow](docs/images/image-5.png)
     - **Python**
     - **DBT**
     - **Docker**
