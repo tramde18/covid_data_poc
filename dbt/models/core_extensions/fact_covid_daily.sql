@@ -5,7 +5,7 @@
 
 WITH agg_daily AS
 (
-    SELECT 
+    SELECT
         PROVINCE_STATE,
         COUNTRY_REGION,
         DATE,

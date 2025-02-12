@@ -62,7 +62,7 @@ After setting up, verify that **dbt** is properly connected to MySQL:
     dbt debug --profiles-dir="${PWD}/dbt/" --project-dir='../dbt'
     ```
 
---- 
+---
 
 #### Running DBT Models
 

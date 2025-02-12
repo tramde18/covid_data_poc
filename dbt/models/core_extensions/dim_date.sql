@@ -24,4 +24,3 @@ SELECT
     IF(DAYOFWEEK(full_date) IN (1, 7), TRUE, FALSE) AS is_weekend,  -- TRUE if weekend (1 = Sunday, 7 = Saturday)
     FALSE AS is_holiday                                     -- Placeholder for holiday flag
 FROM date_series
-

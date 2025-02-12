@@ -1,8 +1,9 @@
 # api/github_client.py
 
-import requests
-import pandas as pd
 from io import StringIO
+
+import pandas as pd
+import requests
 
 
 class GitHubAPIClient:

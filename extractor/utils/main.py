@@ -1,11 +1,13 @@
 # main.py
 
-from mage_ai_poc.utils.config.config_manager import ConfigManager
-from mage_ai_poc.utils.api.github_client import GitHubAPIClient
-from mage_ai_poc.utils.db.mysql_client import MySQLClient
 import os
 
+from mage_ai_poc.utils.api.github_client import GitHubAPIClient
+from mage_ai_poc.utils.config.config_manager import ConfigManager
+from mage_ai_poc.utils.db.mysql_client import MySQLClient
+
 CONFIG_FILE = os.environ.get("DATA_LOADER_CONFIG_PATH")
+
 
 def main():
     """Main function to orchestrate the workflow."""

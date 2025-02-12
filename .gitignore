@@ -4,8 +4,13 @@ dbt/target/*
 dbt/dbt_packages/*
 dbt/logs/*
 logs/*
+scripts/logs/*
 
 # Python Virtual Venv
 venv/*
 */__pycache__
 pyvenv.cfg
+
+# MageAI
+mage_ai_poc/.*
+mage_data/mage_ai_poc.*

@@ -1,20 +1,23 @@
 # db/mysql_loader.py
 
+from urllib.parse import quote
+
 import pandas as pd
 from sqlalchemy import create_engine
-from io import StringIO
+
 from .base_loader import DataLoaderBase
-from urllib.parse import quote
 
 
 class MySQLClient(DataLoaderBase):
     """
-    A MySQL-specific implementation of the DataLoaderBase class, responsible for loading CSV data into MySQL.
+    A MySQL-specific implementation of the DataLoaderBase class,
+    responsible for loading CSV data into MySQL.
     """
 
     def __init__(self, db_config: dict, staging_table: str):
         """
-        Initializes the MySQLDataLoader with database configuration and staging table name.
+        Initializes the MySQLDataLoader with
+        database configuration and staging table name.
 
         Args:
             db_config (dict): MySQL connection configuration.

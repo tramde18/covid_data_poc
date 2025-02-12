@@ -4,7 +4,7 @@
 
 WITH clean_data AS
 (
-SELECT 
+SELECT
     PROVINCE_STATE,
     COUNTRY_REGION,
     LAST_UPDATE,
@@ -48,44 +48,44 @@ SELECT
     PEOPLE_TESTED,
 
     -- Recalculate Metrics for all NULL
-    IFNULL(CASE_FATALITY_RATIO, 
+    IFNULL(CASE_FATALITY_RATIO,
         CASE
-            WHEN DEATHS > 0 and CONFIRMED > 0 
+            WHEN DEATHS > 0 and CONFIRMED > 0
                 THEN (DEATHS / CONFIRMED) * 100
             ELSE 0
         END
     ) AS CASE_FATALITY_RATIO,
 
-    IFNULL(TESTING_RATE, 
+    IFNULL(TESTING_RATE,
         CASE
-            WHEN TOTAL_TEST_RESULTS > 0 and PEOPLE_TESTED > 0 
+            WHEN TOTAL_TEST_RESULTS > 0 and PEOPLE_TESTED > 0
                 THEN (TOTAL_TEST_RESULTS / PEOPLE_TESTED) * 100
             ELSE 0
         END
     ) AS TESTING_RATE,
 
-    IFNULL(HOSPITALIZATION_RATE, 
+    IFNULL(HOSPITALIZATION_RATE,
         CASE
-            WHEN PEOPLE_HOSPITALIZED > 0 and CONFIRMED > 0 
+            WHEN PEOPLE_HOSPITALIZED > 0 and CONFIRMED > 0
                 THEN (PEOPLE_HOSPITALIZED / CONFIRMED) * 100
             ELSE 0
         END
     ) AS HOSPITALIZATION_RATE,
 
-    
+
     INCIDENT_RATE,
 
-    IFNULL(MORTALITY_RATE, 
+    IFNULL(MORTALITY_RATE,
         CASE
-            WHEN DEATHS > 0 and CONFIRMED > 0 
+            WHEN DEATHS > 0 and CONFIRMED > 0
                 THEN (DEATHS / CONFIRMED) * 100
             ELSE 0
         END
     ) AS MORTALITY_RATE
-    
+
 FROM
 (
-SELECT 
+SELECT
     PROVINCE_STATE,
     COUNTRY_REGION,
     UID,
