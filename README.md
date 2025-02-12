@@ -27,6 +27,10 @@ Follow these steps to set up your Python virtual environment and ensure you’re
     ```bash
     source venv/Scripts/activate
     ```
+4. Install required libraries
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 ---
 
@@ -100,6 +104,43 @@ Here are some screenshots to give you an idea of what the Mage.AI pipeline UI lo
 
 **MageAI Pipeline Edit**
 ![MageAI Pipeline Edit](docs/images/image-3.png)
+
+---
+
+#### Setup Pre-Commit Hooks to Improve Code Quality
+To ensure that code quality checks are automatically applied during your development process, Pre-Commit hooks can be integrated alongside the libraries in your **requirements.txt**.
+1. Install Pre-Commit
+
+    First, you need to install the Pre-Commit package. This will allow you to automatically run checks before committing code.
+
+    Run the following command to install Pre-Commit:
+    ```bash
+    pip install pre-commit
+    ```
+
+2. Configure Pre-Commit Hooks
+
+    Once Pre-Commit is installed, the next step is to initialize the hooks. This will set up the hooks defined in your **.pre-commit-config.yaml** file.
+    ```bash
+    pre-commit install
+    ```
+
+3. Run Pre-Commit Hooks on All Files
+
+    To ensure that your current codebase is also checked, you need to run the hooks on all files, not just the ones staged for commit.
+
+    Execute the following command:
+    ```bash
+    pre-commit run --all-files
+    ```
+
+    ![alt text](docs/images/image-4.png)
+
+    This command runs the pre-configured hooks (e.g., code linters, formatters) on all the files in your repository, ensuring that everything complies with your code quality standards.
+
+4. Automatic Execution of Pre-Commit Hooks on Future Commits
+
+    After this setup, every time you make a git commit, the Pre-Commit hooks will automatically be triggered to run the checks defined in your configuration file. This ensures that no commit is made with code that violates your coding standards.
 
 ---
 
